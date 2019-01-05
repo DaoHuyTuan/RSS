@@ -10,19 +10,25 @@
 }
 #main__listTitle {
     width:30%;
-    padding:20px;
-    height:100%;
-    background-color:#e9ebee;
+    padding-left:20px;
+    padding-right: 0px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    height:100%; 
+    background-color:#ffffff;
     left:0;
     position: fixed;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 #main__content {
     width:70%;
-    padding:20px;
+    padding-top: 20px;
     right:0;
     margin-left: 31%;
     font-size: 24px;
+
 }
 #main__content > img {
     display: block;
@@ -31,7 +37,7 @@
 }
 .title--item {
     font-size: 18px;
-    height:40px;
+    height:50px;
     cursor: pointer;
     background-color:#e9ebee;
     padding-left:10px;
@@ -47,5 +53,40 @@
 }
 .active {
     background-color:#babcc0 !important;
+}
+.lazyLoad {
+    background-color:#ffffff !important;
+    height:12px;
+    width:100%;
+    margin-bottom:5px;
+    border-radius: 10px;
+    animation: lazyload 1s forwards linear infinite;
+    background: linear-gradient(to right,  #eeeeee 10%,#dddddd 20%,  #eeeeee 40%);
+    background-size: 800px auto;
+    margin-bottom: 20px;
+}
+#cloneBox {
+    height:100%;
+    width:92%;   
+    transition:1s;
+    position:absolute;
+    box-sizing: border-box;
+}
+#contentCloneBox {
+    /* height:92% ;
+    width:95%; */
+    animation: lazyload 1.5s forwards linear infinite;
+    background: linear-gradient(to right,  #eeeeee 20%,#dddddd 30%,  #eeeeee 60%);
+    background-size: 800px auto;
+    position: absolute;
+    border-radius: 10px;
+}
+@keyframes lazyload {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 800px;
+    }
 }
 
